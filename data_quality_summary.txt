@@ -1,0 +1,23 @@
+Dataset review completed for all 10 CSV files.
+
+1. Missing Values Analysis
+    Most of the datasets do not have any missing values.
+    The file 04_monthly_sip_inflows.csv has 12 missing values in the yoy_growth_pct column.
+    This is expected because YoY (Year-over-Year) growth cannot be calculated for the first few months when previous year data is not available.
+
+2. Data Type Validation
+    AMFI codes are stored as integer (int64) in all related datasets.
+    Numeric fields like NAV, AUM, returns, expense ratio, and transaction amount are stored in proper numeric format.
+    Date columns are stored as object/string type and may need to be converted to datetime format before analysis.
+
+3. Consistency Checks
+    No missing values were found in important columns such as amfi_code, scheme_name, fund_house, investor_id, and transaction_date.
+    Fund master and scheme performance datasets have complete records.
+
+4. Possible Data Preparation Tasks
+    Convert all date columns into datetime format before doing analysis.
+    Handle missing values in yoy_growth_pct if needed for charts or modelling.
+    Check for duplicate records in later ETL process.
+
+5. Overall Assessment
+    The datasets are well structured and mostly complete. Only a small amount of preprocessing is needed, mainly date conversion and handling the expected missing YoY growth values. Some additional checks can also be done during further analysis.
